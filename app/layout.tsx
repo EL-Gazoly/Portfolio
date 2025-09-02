@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
-import Cover from "@/public/cover.png";
 import AEFav from "@/public/icon/favicon.ico";
 import AEFav16 from "@/public/icon/favicon-16x16.png";
 import AEFav32 from "@/public/icon/favicon-32x32.png";
@@ -63,7 +62,7 @@ export const metadata: Metadata = {
     siteName: "Adham ElGazoly Portfolio",
     images: [
       {
-        url: Cover.src,
+        url: "/cover.png",
         width: 1200,
         height: 630,
         alt: "Adham ElGazoly - Full Stack Developer Portfolio",
@@ -77,7 +76,7 @@ export const metadata: Metadata = {
     title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
     description:
       "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
-    images: [Cover.src],
+    images: ["/cover.png"],
     creator: "@AdhamElGazoly", // Replace with your actual Twitter handle if you have one
   },
   robots: {
