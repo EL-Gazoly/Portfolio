@@ -86,11 +86,9 @@ export default function OptimizedHomePage() {
   return (
     <main className="min-h-screen">
       <Navigation />
-
       <Suspense fallback={<SectionSkeleton />}>
         <HeroSection />
       </Suspense>
-
       <Suspense fallback={<SectionSkeleton />}>
         <AboutSection />
       </Suspense>

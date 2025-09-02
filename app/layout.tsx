@@ -6,7 +6,7 @@ import { Toaster } from "sonner";
 import AEFav from "@/public/icon/favicon.ico";
 import AEFav16 from "@/public/icon/favicon-16x16.png";
 import AEFav32 from "@/public/icon/favicon-32x32.png";
-import Cover from "@/public/cover.png";
+import Cover from "@/public/cover.jpg";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
