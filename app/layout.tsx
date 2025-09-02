@@ -49,7 +49,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://adhamelgazoly.com"),
+  metadataBase: new URL(
+    "https://portfolio-git-main-el-gazolys-projects.vercel.app/"
+  ),
   alternates: {
     canonical: "/",
   },
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
     title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
     description:
       "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
-    url: "https://adhamelgazoly.com",
+    url: "https://portfolio-git-main-el-gazolys-projects.vercel.app/",
     siteName: "Adham ElGazoly Portfolio",
     images: [
       {
@@ -161,7 +163,11 @@ export default function RootLayout({
         <meta name="ICBM" content="30.0444, 31.2357" />
 
         {/* Language alternatives (add if you support multiple languages) */}
-        <link rel="alternate" hrefLang="en" href="https://adhamelgazoly.com" />
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href="https://portfolio-git-main-el-gazolys-projects.vercel.app/"
+        />
 
         {/* Structured Data - JSON-LD for better SEO */}
         <script
@@ -171,7 +177,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Adham ElGazoly",
-              url: "https://adhamelgazoly.com",
+              url: "https://portfolio-git-main-el-gazolys-projects.vercel.app/",
               jobTitle: "Full Stack Developer",
               description:
                 "Full Stack Developer with 4+ years of experience in modern web technologies",
