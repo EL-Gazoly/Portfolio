@@ -1,5 +1,3 @@
-// Alternative approach with lazy loading for better performance
-// pages/index-optimized.tsx
 "use client";
 
 import { Navigation, Footer } from "@/components/layout";
@@ -41,7 +39,6 @@ const ContactSection = dynamic(() =>
   }))
 );
 
-// Loading components
 const SectionSkeleton = () => (
   <div className="min-h-screen flex items-center justify-center">
     <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-accent"></div>

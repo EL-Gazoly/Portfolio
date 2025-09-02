@@ -136,7 +136,7 @@ export function HeroSection() {
             <div className="flex items-center gap-4 mb-8">
               <div className="flex items-center gap-2 text-accent">
                 <Zap className="h-5 w-5 animate-pulse" />
-                <span className="text-lg">4+ Years Experience</span>
+                <span className="text-lg">3+ Years Experience</span>
               </div>
               <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
               <div className="flex items-center gap-2 text-emerald-400">
