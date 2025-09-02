@@ -44,9 +44,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(
-    "https://portfolio-git-main-el-gazolys-projects.vercel.app/"
-  ),
+  metadataBase: new URL("https://www.adhamelgazoly.com"),
   alternates: {
     canonical: "/",
   },
@@ -54,11 +52,11 @@ export const metadata: Metadata = {
     title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
     description:
       "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
-    url: "https://portfolio-git-main-el-gazolys-projects.vercel.app/",
+    url: "https://www.adhamelgazoly.com/",
     siteName: "Adham ElGazoly Portfolio",
     images: [
       {
-        url: "/cover.png",
+        url: "https://www.adhamelgazoly.com/cover.png",
         width: 1200,
         height: 630,
         alt: "Adham ElGazoly - Full Stack Developer Portfolio",
@@ -72,7 +70,7 @@ export const metadata: Metadata = {
     title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
     description:
       "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
-    images: ["/cover.png"],
+    images: ["https://www.adhamelgazoly.com/cover.png"],
     creator: "@elgazoly_m",
   },
   robots: {
@@ -90,13 +88,21 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      {
+        url: "https://www.adhamelgazoly.com/icon/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "https://www.adhamelgazoly.com/icon/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
     ],
-    shortcut: "/icon/favicon.ico",
+    shortcut: "https://www.adhamelgazoly.com/icon/favicon.ico",
     apple: [
       {
-        url: "/icon/apple-touch-icon.png",
+        url: "https://www.adhamelgazoly.com/icon/apple-touch-icon.png",
         sizes: "180x180",
         type: "image/png",
       },
@@ -104,12 +110,12 @@ export const metadata: Metadata = {
     other: [
       {
         rel: "icon",
-        url: "/icon/favicon.ico",
+        url: "https://www.adhamelgazoly.com/icon/favicon.ico",
         type: "image/x-icon",
       },
     ],
   },
-  manifest: "/site.webmanifest",
+  manifest: "https://www.adhamelgazoly.com/site.webmanifest",
   verification: {},
   category: "technology",
   classification: "Portfolio",
@@ -142,10 +148,17 @@ export default function RootLayout({
         />
 
         {/* Additional favicon fallback */}
-        <link rel="icon" type="image/x-icon" href="/icon/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="https://www.adhamelgazoly.com/icon/favicon.ico"
+        />
 
         {/* Web App Manifest */}
-        <link rel="manifest" href="/site.webmanifest" />
+        <link
+          rel="manifest"
+          href="https://www.adhamelgazoly.com/site.webmanifest"
+        />
 
         {/* Additional meta tags */}
         <meta name="mobile-web-app-capable" content="yes" />
@@ -163,7 +176,7 @@ export default function RootLayout({
         <link
           rel="alternate"
           hrefLang="en"
-          href="https://portfolio-git-main-el-gazolys-projects.vercel.app/"
+          href="https://www.adhamelgazoly.com/"
         />
 
         {/* Structured Data - JSON-LD for better SEO */}
@@ -174,7 +187,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Adham ElGazoly",
-              url: "https://portfolio-git-main-el-gazolys-projects.vercel.app/",
+              url: "https://www.adhamelgazoly.com/",
               jobTitle: "Full Stack Developer",
               description:
                 "Full Stack Developer with 4+ years of experience in modern web technologies",

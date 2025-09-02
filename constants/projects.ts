@@ -1,5 +1,16 @@
 import { Project } from "../types/project";
 
+import TurnBG from "../assets/projects/turnbrands_cover.png";
+import Jennessey from "../assets/projects/jennessy.png";
+import ChatBot from "../assets/projects/corporatica_cover.png";
+import SevenTeams from "../assets/projects/seven-teams.png";
+import Gotion from "../assets/projects/gotion.png";
+import ImageProcessing from "../assets/projects/generate-image.png";
+import FileStorage from "../assets/projects/file-storage.png";
+import MOO from "../assets/projects/moo.png";
+import Kiu from "../assets/projects/kiu.png";
+import Corporatica from "../assets/projects/corporatica.png";
+
 export const projects: Project[] = [
   {
     title: "Turn Management Tools",
