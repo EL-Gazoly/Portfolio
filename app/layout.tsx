@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import AEFav from "@/public/icon/favicon.ico";
+import AEFav16 from "@/public/icon/favicon-16x16.png";
+import AEFav32 from "@/public/icon/favicon-32x32.png";
+import Cover from "@/public/cover.png";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -52,11 +56,11 @@ export const metadata: Metadata = {
     title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
     description:
       "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
-    url: "https://www.adhamelgazoly.com/",
+    url: "https://portfolio-git-main-el-gazolys-projects.vercel.app/",
     siteName: "Adham ElGazoly Portfolio",
     images: [
       {
-        url: "https://www.adhamelgazoly.com/cover.png",
+        url: Cover.src,
         width: 1200,
         height: 630,
         alt: "Adham ElGazoly - Full Stack Developer Portfolio",
@@ -70,7 +74,7 @@ export const metadata: Metadata = {
     title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
     description:
       "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
-    images: ["https://www.adhamelgazoly.com/cover.png"],
+    images: [Cover.src],
     creator: "@elgazoly_m",
   },
   robots: {
@@ -88,21 +92,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      {
-        url: "https://www.adhamelgazoly.com/icon/favicon-16x16.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-      {
-        url: "https://www.adhamelgazoly.com/icon/favicon-32x32.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
+      { url: AEFav16.src, sizes: "16x16", type: "image/png" },
+      { url: AEFav32.src, sizes: "32x32", type: "image/png" },
     ],
-    shortcut: "https://www.adhamelgazoly.com/icon/favicon.ico",
+    shortcut: AEFav.src,
     apple: [
       {
-        url: "https://www.adhamelgazoly.com/icon/apple-touch-icon.png",
+        url: AEFav32.src,
         sizes: "180x180",
         type: "image/png",
       },
@@ -110,12 +106,12 @@ export const metadata: Metadata = {
     other: [
       {
         rel: "icon",
-        url: "https://www.adhamelgazoly.com/icon/favicon.ico",
+        url: AEFav.src,
         type: "image/x-icon",
       },
     ],
   },
-  manifest: "https://www.adhamelgazoly.com/site.webmanifest",
+  manifest: "/site.webmanifest",
   verification: {},
   category: "technology",
   classification: "Portfolio",
@@ -148,17 +144,10 @@ export default function RootLayout({
         />
 
         {/* Additional favicon fallback */}
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href="https://www.adhamelgazoly.com/icon/favicon.ico"
-        />
+        <link rel="icon" type="image/x-icon" href="/icon/favicon.ico" />
 
         {/* Web App Manifest */}
-        <link
-          rel="manifest"
-          href="https://www.adhamelgazoly.com/site.webmanifest"
-        />
+        <link rel="manifest" href="/site.webmanifest" />
 
         {/* Additional meta tags */}
         <meta name="mobile-web-app-capable" content="yes" />
@@ -176,7 +165,7 @@ export default function RootLayout({
         <link
           rel="alternate"
           hrefLang="en"
-          href="https://www.adhamelgazoly.com/"
+          href="https://portfolio-git-main-el-gazolys-projects.vercel.app/"
         />
 
         {/* Structured Data - JSON-LD for better SEO */}
@@ -187,7 +176,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Adham ElGazoly",
-              url: "https://www.adhamelgazoly.com/",
+              url: "https://portfolio-git-main-el-gazolys-projects.vercel.app/",
               jobTitle: "Full Stack Developer",
               description:
                 "Full Stack Developer with 4+ years of experience in modern web technologies",
