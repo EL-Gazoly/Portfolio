@@ -1,16 +1,5 @@
 import { Project } from "../types/project";
 
-import TurnBG from "../assets/projects/turnbrands_cover.png";
-import Jennessey from "../assets/projects/jennessy.png";
-import ChatBot from "../assets/projects/corporatica_cover.png";
-import SevenTeams from "../assets/projects/seven-teams.png";
-import Gotion from "../assets/projects/gotion.png";
-import ImageProcessing from "../assets/projects/generate-image.png";
-import FileStorage from "../assets/projects/file-storage.png";
-import MOO from "../assets/projects/moo.png";
-import Kiu from "../assets/projects/kiu.png";
-import Corporatica from "../assets/projects/corporatica.png";
-
 export const projects: Project[] = [
   {
     title: "Turn Management Tools",
@@ -24,7 +13,7 @@ export const projects: Project[] = [
       "Node.js",
       "Automation",
     ],
-    image: TurnBG.src,
+    image: "/projects/turnbrands_cover.png",
     featured: true,
     hasCode: false,
     hasDemo: true,
@@ -41,7 +30,7 @@ export const projects: Project[] = [
       "SEO",
       "Performance",
     ],
-    image: TurnBG.src,
+    image: "/projects/turnbrands_cover.png",
     featured: true,
     hasCode: false,
     hasDemo: true,
@@ -52,7 +41,7 @@ export const projects: Project[] = [
     description:
       "A new era for Turn products — designed and implemented an innovative product suite that reimagines workflows and elevates the entire customer experience.",
     technologies: ["Next.js", "TypeScript", "Zustand", "Tailwind"],
-    image: TurnBG.src,
+    image: "/projects/turnbrands_cover.png",
     featured: true,
     hasDemo: true,
     demoLink: "https://retrovision.turn.me/",
@@ -68,7 +57,7 @@ export const projects: Project[] = [
       "TailwindCSS",
       "Data Visualization",
     ],
-    image: ChatBot.src,
+    image: "/projects/corporatica_cover.png",
     featured: false,
     hasDemo: false,
   },
@@ -83,7 +72,7 @@ export const projects: Project[] = [
       "Image Processing",
       "Generative AI",
     ],
-    image: ImageProcessing.src,
+    image: "/projects/generate-image.png",
     featured: false,
   },
   {
@@ -97,7 +86,7 @@ export const projects: Project[] = [
       "SEO",
       "Performance Optimization",
     ],
-    image: Corporatica.src,
+    image: "/projects/corporatica.png",
     featured: false,
     hasCode: false,
     hasDemo: true,
@@ -116,7 +105,7 @@ export const projects: Project[] = [
       "AWS",
       "PostgreSQL",
     ],
-    image: SevenTeams.src,
+    image: "/projects/seven-teams.png",
     featured: true,
     hasCode: true,
     hasDemo: false,
@@ -127,7 +116,7 @@ export const projects: Project[] = [
     description:
       "A real estate platform for lead generation and outreach solutions with smooth navigation and optimized performance.",
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
-    image: Jennessey.src,
+    image: "/projects/jennessy.png",
     featured: false,
     hasCode: true,
     hasDemo: true,
@@ -139,7 +128,7 @@ export const projects: Project[] = [
     description:
       "A Notion-like productivity app with Convex & Clerk authentication, real-time collaboration, publishing, and responsive design.",
     technologies: ["Next.js", "TypeScript", "Convex", "Clerk", "TailwindCSS"],
-    image: Gotion.src,
+    image: "/projects/gotion.png",
     featured: false,
     hasCode: true,
     hasDemo: true,
@@ -159,7 +148,7 @@ export const projects: Project[] = [
       "Strapi",
       "PostgreSQL",
     ],
-    image: Kiu.src,
+    image: "/projects/kiu.png",
     featured: false,
     hasCode: false,
     hasDemo: false,
@@ -169,7 +158,7 @@ export const projects: Project[] = [
     description:
       "A social media app focused on anonymous expression and private features.",
     technologies: ["Next.js", "TailwindCSS", "Zustand", "NextAuth", "Firebase"],
-    image: MOO.src,
+    image: "/projects/moo.png",
     featured: false,
     hasCode: false,
     hasDemo: false,
@@ -179,7 +168,7 @@ export const projects: Project[] = [
     description:
       "A secure cloud storage platform with social login, enhanced security, and data encryption.",
     technologies: ["Node.js", "PostgreSQL", "Docker", "Authentication"],
-    image: FileStorage.src,
+    image: "/projects/file-fortress.png",
     featured: false,
     hasCode: false,
     hasDemo: false,
