@@ -3,10 +3,6 @@ import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
-import AEFav from "@/public/icon/favicon.ico";
-import AEFav16 from "@/public/icon/favicon-16x16.png";
-import AEFav32 from "@/public/icon/favicon-32x32.png";
-import AEApple from "@/public/icon/apple-touch-icon.png";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -77,7 +73,7 @@ export const metadata: Metadata = {
     description:
       "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
     images: ["/cover.png"],
-    creator: "@AdhamElGazoly", // Replace with your actual Twitter handle if you have one
+    creator: "@elgazoly_m",
   },
   robots: {
     index: true,
@@ -94,25 +90,27 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: AEFav16.src, sizes: "16x16", type: "image/png" },
-      { url: AEFav32.src, sizes: "32x32", type: "image/png" },
+      { url: "/icon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    shortcut: AEFav.src,
-    apple: [{ url: AEApple.src, sizes: "180x180", type: "image/png" }],
+    shortcut: "/icon/favicon.ico",
+    apple: [
+      {
+        url: "/icon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
     other: [
       {
         rel: "icon",
-        url: AEFav.src,
+        url: "/icon/favicon.ico",
         type: "image/x-icon",
       },
     ],
   },
-  manifest: "/site.webmanifest", // You'll need to create this file
-  verification: {
-    google: "your-google-verification-code", // Replace with your actual Google Search Console verification
-    // yandex: "your-yandex-verification-code", // Add if needed
-    // yahoo: "your-yahoo-verification-code", // Add if needed
-  },
+  manifest: "/site.webmanifest",
+  verification: {},
   category: "technology",
   classification: "Portfolio",
   referrer: "origin-when-cross-origin",
@@ -144,7 +142,7 @@ export default function RootLayout({
         />
 
         {/* Additional favicon fallback */}
-        <link rel="icon" type="image/x-icon" href={AEFav.src} />
+        <link rel="icon" type="image/x-icon" href="/icon/favicon.ico" />
 
         {/* Web App Manifest */}
         <link rel="manifest" href="/site.webmanifest" />
