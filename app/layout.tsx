@@ -3,6 +3,11 @@ import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import Cover from "@/public/cover.png";
+import AEFav from "@/public/icon/favicon.ico";
+import AEFav16 from "@/public/icon/favicon-16x16.png";
+import AEFav32 from "@/public/icon/favicon-32x32.png";
+import AEApple from "@/public/icon/apple-touch-icon.png";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -17,10 +22,104 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Adham ElGazoly - Full Stack Developer",
+  title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
   description:
-    "Personal portfolio of Adham ElGazoly, a passionate full stack developer specializing in modern web technologies.",
-  generator: "v0.app",
+    "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
+  keywords: [
+    "Adham ElGazoly",
+    "Full Stack Developer",
+    "Software Engineer",
+    "React Developer",
+    "Next.js Developer",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "Web Development",
+    "Frontend Developer",
+    "Backend Developer",
+    "Portfolio",
+    "Cairo Developer",
+    "Egypt Developer",
+  ],
+  authors: [{ name: "Adham ElGazoly" }],
+  creator: "Adham ElGazoly",
+  publisher: "Adham ElGazoly",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://adhamelgazoly.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
+    description:
+      "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
+    url: "https://adhamelgazoly.com",
+    siteName: "Adham ElGazoly Portfolio",
+    images: [
+      {
+        url: Cover.src,
+        width: 1200,
+        height: 630,
+        alt: "Adham ElGazoly - Full Stack Developer Portfolio",
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
+    description:
+      "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
+    images: [Cover.src],
+    creator: "@AdhamElGazoly", // Replace with your actual Twitter handle if you have one
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: AEFav16.src, sizes: "16x16", type: "image/png" },
+      { url: AEFav32.src, sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: AEFav.src,
+    apple: [{ url: AEApple.src, sizes: "180x180", type: "image/png" }],
+    other: [
+      {
+        rel: "icon",
+        url: AEFav.src,
+        type: "image/x-icon",
+      },
+    ],
+  },
+  manifest: "/site.webmanifest", // You'll need to create this file
+  verification: {
+    google: "your-google-verification-code", // Replace with your actual Google Search Console verification
+    // yandex: "your-yandex-verification-code", // Add if needed
+    // yahoo: "your-yahoo-verification-code", // Add if needed
+  },
+  category: "technology",
+  classification: "Portfolio",
+  referrer: "origin-when-cross-origin",
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#10b981" },
+    { media: "(prefers-color-scheme: dark)", color: "#10b981" },
+  ],
 };
 
 export default function RootLayout({
@@ -29,7 +128,76 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${dmSans.variable}`}
+      style={{ scrollBehavior: "smooth", overflowX: "hidden" }}
+    >
+      <head>
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+
+        {/* Additional favicon fallback */}
+        <link rel="icon" type="image/x-icon" href={AEFav.src} />
+
+        {/* Web App Manifest */}
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Additional meta tags */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Adham ElGazoly" />
+
+        {/* Additional SEO meta tags */}
+        <meta name="geo.region" content="EG-C" />
+        <meta name="geo.placename" content="Cairo" />
+        <meta name="geo.position" content="30.0444;31.2357" />
+        <meta name="ICBM" content="30.0444, 31.2357" />
+
+        {/* Language alternatives (add if you support multiple languages) */}
+        <link rel="alternate" hrefLang="en" href="https://adhamelgazoly.com" />
+
+        {/* Structured Data - JSON-LD for better SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Adham ElGazoly",
+              url: "https://adhamelgazoly.com",
+              jobTitle: "Full Stack Developer",
+              description:
+                "Full Stack Developer with 4+ years of experience in modern web technologies",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Cairo",
+                addressCountry: "Egypt",
+              },
+              email: "elgazoly11@gmail.com",
+              sameAs: [
+                "https://github.com/EL-Gazoly",
+                "https://www.linkedin.com/in/adham-elgazoly-075385190/",
+              ],
+              knowsAbout: [
+                "JavaScript",
+                "TypeScript",
+                "React",
+                "Next.js",
+                "Node.js",
+                "Full Stack Development",
+                "Web Development",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {children}
         <Toaster position="bottom-center" />
