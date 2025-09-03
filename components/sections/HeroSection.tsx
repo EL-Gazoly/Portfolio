@@ -13,21 +13,16 @@ import {
 } from "@/components/3d";
 import * as THREE from "three";
 
-// Move interface outside component
-interface MousePosition {
-  x: number;
-  y: number;
-}
-
 export function HeroSection() {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
-  });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
+    interface MousePosition {
+      x: number;
+      y: number;
+    }
 
     const handleMouseMove = (e: MouseEvent): void => {
       setMousePosition({
@@ -42,9 +37,8 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/5 pt-16 md:pt-20"
+      className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/5"
     >
-      {/* 3D Canvas Background - Reduced complexity on mobile */}
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
           <ambientLight intensity={0.2} />
@@ -65,8 +59,8 @@ export function HeroSection() {
           <Stars
             radius={400}
             depth={80}
-            count={window.innerWidth < 768 ? 1000 : 2000} // Fewer stars on mobile
-            factor={window.innerWidth < 768 ? 4 : 8}
+            count={2000}
+            factor={8}
             saturation={0}
             fade
             speed={0.5}
@@ -88,9 +82,8 @@ export function HeroSection() {
         </Canvas>
       </div>
 
-      {/* Floating particles - Reduced count on mobile */}
       <div className="absolute inset-0 z-5">
-        {[...Array(window.innerWidth < 768 ? 20 : 50)].map((_, i) => (
+        {[...Array(50)].map((_, i) => (
           <div
             key={i}
             className={`absolute rounded-full animate-pulse ${
@@ -112,7 +105,6 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 md:px-6 z-10 relative">
         <div className="max-w-5xl">
-          {/* Main heading */}
           <div
             className={`transition-all duration-1000 ${
               isLoaded
@@ -120,18 +112,17 @@ export function HeroSection() {
                 : "translate-y-10 opacity-0"
             }`}
           >
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-bold font-heading mb-6 md:mb-8 leading-tight">
+            <h1 className="text-4xl md:text-7xl lg:text-9xl font-bold font-heading mb-6 md:mb-8 leading-tight">
               <span className="bg-gradient-to-r from-white via-accent to-emerald-300 bg-clip-text text-transparent animate-gradient-x">
                 Adham
               </span>
               <br />
-              <span className="text-accent drop-shadow-2xl animate-pulse-glow text-3xl sm:text-5xl md:text-6xl lg:text-8xl">
+              <span className="text-accent drop-shadow-2xl animate-pulse-glow text-3xl md:text-6xl lg:text-8xl">
                 ElGazoly
               </span>
             </h1>
           </div>
 
-          {/* Subtitle and stats */}
           <div
             className={`transition-all duration-1000 delay-300 ${
               isLoaded
@@ -139,17 +130,17 @@ export function HeroSection() {
                 : "translate-y-10 opacity-0"
             }`}
           >
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl mb-4 md:mb-6 font-light bg-gradient-to-r from-white to-accent/80 bg-clip-text text-transparent">
+            <p className="text-lg md:text-2xl lg:text-4xl mb-4 md:mb-6 font-light bg-gradient-to-r from-white to-accent/80 bg-clip-text text-transparent">
               Full Stack Developer
             </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-6 md:mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-6 md:mb-8">
               <div className="flex items-center gap-2 text-accent">
-                <Zap className="h-4 w-4 md:h-5 md:w-5 animate-pulse flex-shrink-0" />
+                <Zap className="h-4 w-4 md:h-5 md:w-5 animate-pulse" />
                 <span className="text-sm md:text-lg">3+ Years Experience</span>
               </div>
               <div className="hidden sm:block w-2 h-2 bg-accent rounded-full animate-pulse"></div>
               <div className="flex items-center gap-2 text-emerald-400">
-                <Rocket className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+                <Rocket className="h-4 w-4 md:h-5 md:w-5" />
                 <span className="text-sm md:text-lg">
                   30+ Projects Delivered
                 </span>
@@ -157,7 +148,6 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Description */}
           <div
             className={`transition-all duration-1000 delay-500 ${
               isLoaded
@@ -165,14 +155,13 @@ export function HeroSection() {
                 : "translate-y-10 opacity-0"
             }`}
           >
-            <p className="text-base md:text-xl lg:text-2xl text-muted-foreground/90 mb-8 md:mb-10 max-w-2xl lg:max-w-3xl leading-relaxed">
+            <p className="text-base md:text-xl lg:text-2xl text-muted-foreground/90 mb-8 md:mb-10 max-w-2xl md:max-w-3xl leading-relaxed">
               Crafting innovative digital experiences with cutting-edge
               technologies. Specializing in scalable architectures and immersive
               user interfaces that push the boundaries of what's possible.
             </p>
           </div>
 
-          {/* Action buttons */}
           <div
             className={`flex flex-col sm:flex-row gap-4 md:gap-6 transition-all duration-1000 delay-700 ${
               isLoaded

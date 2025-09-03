@@ -10,7 +10,6 @@ const HeroSection = dynamic(
       default: mod.HeroSection,
     })),
   {
-    ssr: false,
     loading: () => <SectionSkeleton />,
   }
 );
