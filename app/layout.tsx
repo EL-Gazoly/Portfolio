@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
     description:
-      "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
+      "Portfolio of Adham ElGazoly, a passionate full stack developer with 3+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
     url: "https://www.adhamelgazoly.com/",
     siteName: "Adham ElGazoly Portfolio",
     images: [
