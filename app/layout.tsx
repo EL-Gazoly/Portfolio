@@ -56,11 +56,11 @@ export const metadata: Metadata = {
     title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
     description:
       "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
-    url: "https://portfolio-git-main-el-gazolys-projects.vercel.app/",
+    url: "https://www.adhamelgazoly.com",
     siteName: "Adham ElGazoly Portfolio",
     images: [
       {
-        url: Cover.src,
+        url: "/cover.png",
         width: 1200,
         height: 630,
         alt: "Adham ElGazoly - Full Stack Developer Portfolio",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
     description:
       "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
-    images: [Cover.src],
+    images: ["/cover.png"],
     creator: "@elgazoly_m",
   },
   robots: {
@@ -165,7 +165,7 @@ export default function RootLayout({
         <link
           rel="alternate"
           hrefLang="en"
-          href="https://portfolio-git-main-el-gazolys-projects.vercel.app/"
+          href="https://www.adhamelgazoly.com/"
         />
 
         {/* Structured Data - JSON-LD for better SEO */}
@@ -176,7 +176,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Adham ElGazoly",
-              url: "https://portfolio-git-main-el-gazolys-projects.vercel.app/",
+              url: "https://www.adhamelgazoly.com/",
               jobTitle: "Full Stack Developer",
               description:
                 "Full Stack Developer with 4+ years of experience in modern web technologies",
