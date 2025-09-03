@@ -22,9 +22,9 @@ export function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 md:px-6 py-3 md:py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold font-heading text-accent animate-pulse-glow">
+          <div className="text-xl md:text-2xl font-bold font-heading text-accent animate-pulse-glow">
             AE<span className="text-white">.</span>
           </div>
           <div className="hidden md:flex space-x-8">
