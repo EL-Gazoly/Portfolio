@@ -11,7 +11,9 @@ import {
   FloatingText,
   ParticleField,
 } from "@/components/3d";
+import * as THREE from "three";
 
+// Move interface outside component
 interface MousePosition {
   x: number;
   y: number;
