@@ -1,3 +1,4 @@
+# Default: track common binary/image types with LFS
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
@@ -16,3 +17,6 @@
 *.nef filter=lfs diff=lfs merge=lfs -text
 *.orf filter=lfs diff=lfs merge=lfs -text
 *.sr2 filter=lfs diff=lfs merge=lfs -text
+
+# Override: disable LFS for anything inside public/
+public/** -filter=lfs
