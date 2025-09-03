@@ -141,7 +141,7 @@ export function HeroSection() {
               <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
               <div className="flex items-center gap-2 text-emerald-400">
                 <Rocket className="h-5 w-5" />
-                <span className="text-lg">50+ Projects Delivered</span>
+                <span className="text-lg">30+ Projects Delivered</span>
               </div>
             </div>
           </div>

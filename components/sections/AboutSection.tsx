@@ -55,7 +55,7 @@ export function AboutSection() {
 
             <div className="grid grid-cols-3 gap-6 mt-10 mb-8">
               <div className="text-center p-4 bg-gradient-to-br from-accent/10 to-transparent rounded-lg border border-accent/20">
-                <div className="text-3xl font-bold text-accent mb-2">25+</div>
+                <div className="text-3xl font-bold text-accent mb-2">30+</div>
                 <div className="text-sm text-muted-foreground">Projects</div>
               </div>
               <div className="text-center p-4 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-lg border border-emerald-500/20">
