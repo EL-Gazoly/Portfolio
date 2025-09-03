@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "Adham ElGazoly Portfolio",
     images: [
       {
-        url: "/cover.png",
+        url: "https://www.adhamelgazoly.com/cover.png",
         width: 1200,
         height: 630,
         alt: "Adham ElGazoly - Full Stack Developer Portfolio",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     title: "Adham ElGazoly | Full Stack Developer & Software Engineer",
     description:
       "Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions.",
-    images: ["/cover.png"],
+    images: ["https://www.adhamelgazoly.com/cover.png"],
     creator: "@elgazoly_m",
   },
   robots: {
@@ -149,6 +149,47 @@ export default function RootLayout({
         {/* Web App Manifest */}
         <link rel="manifest" href="/site.webmanifest" />
 
+        {/* Explicit Open Graph meta tags for WhatsApp compatibility */}
+        <meta
+          property="og:title"
+          content="Adham ElGazoly | Full Stack Developer & Software Engineer"
+        />
+        <meta
+          property="og:description"
+          content="Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions."
+        />
+        <meta
+          property="og:image"
+          content="https://www.adhamelgazoly.com/cover.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image:alt"
+          content="Adham ElGazoly - Full Stack Developer Portfolio"
+        />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:url" content="https://www.adhamelgazoly.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Adham ElGazoly Portfolio" />
+        <meta property="og:locale" content="en-US" />
+
+        {/* Twitter Card meta tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Adham ElGazoly | Full Stack Developer & Software Engineer"
+        />
+        <meta
+          name="twitter:description"
+          content="Portfolio of Adham ElGazoly, a passionate full stack developer with 4+ years of experience building scalable web applications, React/Next.js expertise, and modern JavaScript solutions."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.adhamelgazoly.com/cover.png"
+        />
+        <meta name="twitter:creator" content="@elgazoly_m" />
+
         {/* Additional meta tags */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -199,6 +240,7 @@ export default function RootLayout({
                 "Full Stack Development",
                 "Web Development",
               ],
+              image: "https://www.adhamelgazoly.com/cover.png",
             }),
           }}
         />
