@@ -5,42 +5,24 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, Stars } from "@react-three/drei";
 import { Button } from "@/components/ui/button";
 import { Code, Database, Zap, Rocket } from "lucide-react";
-// Temporarily comment out custom 3D components to test
-// import {
-//   AnimatedSphere,
-//   CodeMatrix,
-//   FloatingText,
-//   ParticleField,
-// } from "@/components/3d";
+import {
+  AnimatedSphere,
+  CodeMatrix,
+  FloatingText,
+  ParticleField,
+} from "@/components/3d";
 import * as THREE from "three";
 
-// Move interface outside of component
-interface MousePosition {
-  x: number;
-  y: number;
-}
-
-// Simple fallback 3D component for testing
-function TestSphere() {
-  return (
-    <mesh>
-      <sphereGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial color="#10b981" wireframe />
-    </mesh>
-  );
-}
-
 export function HeroSection() {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
-  });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
-  const [canvasError, setCanvasError] = useState(false);
 
   useEffect(() => {
-    console.log("HeroSection mounting..."); // Debug log
     setIsLoaded(true);
+    interface MousePosition {
+      x: number;
+      y: number;
+    }
 
     const handleMouseMove = (e: MouseEvent): void => {
       setMousePosition({
@@ -48,78 +30,60 @@ export function HeroSection() {
         y: -(e.clientY / window.innerHeight) * 2 + 1,
       });
     };
-
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
-
-  // Error boundary for Canvas
-  const handleCanvasError = (error: any) => {
-    console.error("Canvas error:", error);
-    setCanvasError(true);
-  };
-
-  console.log("HeroSection rendering..."); // Debug log
 
   return (
     <section
       id="home"
       className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/5"
     >
-      {/* Simplified background without complex 3D for testing */}
       <div className="absolute inset-0 z-0">
-        {!canvasError ? (
-          <Canvas
-            camera={{ position: [0, 0, 10], fov: 75 }}
-            onError={handleCanvasError}
-            fallback={
-              <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10" />
-            }
-          >
-            <ambientLight intensity={0.3} />
-            <pointLight
-              position={[10, 10, 10]}
-              intensity={1.5}
-              color="#10b981"
-            />
+        <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
+          <ambientLight intensity={0.2} />
+          <pointLight position={[10, 10, 10]} intensity={1.5} color="#10b981" />
+          <pointLight
+            position={[-10, -10, -10]}
+            intensity={0.8}
+            color="#059669"
+          />
+          <spotLight
+            position={[0, 10, 0]}
+            intensity={1}
+            angle={0.3}
+            penumbra={1}
+            color="#34d399"
+          />
 
-            {/* Use simple components for testing */}
-            <Stars
-              radius={400}
-              depth={80}
-              count={1000}
-              factor={4}
-              saturation={0}
-              fade
-              speed={0.5}
-            />
+          <Stars
+            radius={400}
+            depth={80}
+            count={2000}
+            factor={8}
+            saturation={0}
+            fade
+            speed={0.5}
+          />
+          <ParticleField />
+          <AnimatedSphere />
+          <CodeMatrix />
+          <FloatingText />
 
-            <TestSphere />
-
-            {/* Temporarily comment out custom components */}
-            {/* <ParticleField />
-            <AnimatedSphere />
-            <CodeMatrix />
-            <FloatingText /> */}
-
-            <Environment preset="night" />
-            <OrbitControls
-              enableZoom={false}
-              autoRotate
-              autoRotateSpeed={0.2}
-              enablePan={false}
-              maxPolarAngle={Math.PI / 2}
-              minPolarAngle={Math.PI / 2}
-            />
-          </Canvas>
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10" />
-        )}
+          <Environment preset="night" />
+          <OrbitControls
+            enableZoom={false}
+            autoRotate
+            autoRotateSpeed={0.2}
+            enablePan={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+        </Canvas>
       </div>
 
-      {/* Simplified particle overlay */}
       <div className="absolute inset-0 z-5">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(50)].map((_, i) => (
           <div
             key={i}
             className={`absolute rounded-full animate-pulse ${
@@ -166,7 +130,7 @@ export function HeroSection() {
                 : "translate-y-10 opacity-0"
             }`}
           >
-            <p className="text-2xl md:text-4xl mb-6 font-light bg-gradient-to-r from-white to-accent/80 bg-clip-text text-transparent">
+            <p className="text-2xl md:text-4xl  mb-6 font-light bg-gradient-to-r from-white to-accent/80 bg-clip-text text-transparent">
               Full Stack Developer
             </p>
             <div className="flex items-center gap-4 mb-8">
@@ -225,15 +189,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
-      {/* Debug info - remove after fixing */}
-      {process.env.NODE_ENV === "development" && (
-        <div className="fixed top-4 right-4 bg-black/80 text-white p-2 rounded z-50 text-sm">
-          HeroSection Loaded: {isLoaded ? "Yes" : "No"}
-          <br />
-          Canvas Error: {canvasError ? "Yes" : "No"}
-        </div>
-      )}
     </section>
   );
 }
